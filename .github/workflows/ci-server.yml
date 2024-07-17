@@ -18,8 +18,10 @@ jobs:
       - name: ⏬ Install dependencies
         run: npm install
 
-      - name: 🚨 Linter
-        run: npm run lint
+      - name: 💄 Run Ruff
+        run: |
+          ruff check --output-format=github .
+          ruff format --check .
 
   test_job:
     runs-on: ubuntu-latest
