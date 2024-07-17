@@ -16,14 +16,10 @@ jobs:
           node-version: "18"
 
       - name: ⏬ Install dependencies
-        run: |
-             npm install
-             npm install -g ruff
+        run: npm install
 
-      - name: 💄 Run Ruff
-        run: |
-          ruff check --output-format=github .
-          ruff format --check .
+      - name: 🚨 Linter
+        run: npm run lint
 
   test_job:
     runs-on: ubuntu-latest
