@@ -1,4 +1,4 @@
-name: 💚 CI for tests and linter to server
+name: 💚 Tests and linter to server
 
 on: push
 
@@ -37,4 +37,4 @@ jobs:
         run: npm install
 
       - name: ✅ Test
-        run: npm test
+        run: npm test:e2e
