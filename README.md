@@ -33,6 +33,6 @@ DB_PASSWORD=
 ```bash
 npm install
 npm run start:dev
-```   
+```  
 
 Your server will be accessible at http://localhost:3000.
