@@ -12,6 +12,10 @@ repos:
       - id: forbid-submodules
       - id: mixed-line-ending
       - id: pretty-format-json
+        args:
+          - "--autofix"
+          - "--indent=4"
+          - "--no-sort-keys"
       - id: trailing-whitespace
         args:
           - --markdown-linebreak-ext=md
