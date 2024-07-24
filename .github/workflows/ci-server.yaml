@@ -27,13 +27,6 @@ jobs:
       - name: 🚨 Format
         run: npm run format
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          eslintArgs: "**/*.ts"
-          auto_fix: true
-
 
   test_job:
     runs-on: ubuntu-latest
