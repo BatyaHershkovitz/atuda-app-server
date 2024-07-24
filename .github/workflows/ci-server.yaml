@@ -18,7 +18,6 @@ jobs:
       - name: ⏬ Install dependencies
         run: npm install
 
-
       - name: 🍻 Install eslint
         run: npx eslint --fix
 
