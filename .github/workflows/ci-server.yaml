@@ -18,6 +18,10 @@ jobs:
       - name: ⏬ Install dependencies
         run: npm install
 
+
+      - name: 🍻 Install eslint
+        run: npx eslint --fix
+
       - name: 🚨 Linter
         run: npm run lint --fix
 
