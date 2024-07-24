@@ -24,6 +24,9 @@ jobs:
       - name: 🚨 Linter
         run: npm run lint --fix
 
+      - name: 🚨 Format
+        run: npm run format
+
   test_job:
     runs-on: ubuntu-latest
 
