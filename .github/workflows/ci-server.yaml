@@ -1,0 +1,49 @@
+name: 💚 Tests and linter to server
+
+on: push
+
+jobs:
+  linter_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📂 Checkout code
+        uses: actions/checkout@v2
+
+      - name: 🛠️ Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+
+      - name: ⏬ Install dependencies
+        run: npm install
+
+      - name: 🍻 Install eslint
+        run: npx eslint --fix
+
+      - name: 🚨 Linter
+        run: npm run lint --fix
+
+      - name: 🚨 Format
+        run: npm run format
+
+
+  test_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📂 Checkout code
+        uses: actions/checkout@v2
+
+      - name: 🛠️ Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+
+      - name: ⏬ Install dependencies
+        run: npm install
+
+      - name: ✅ Run test
+        run: |
+            npm test
+            npm run test:e2e

@@ -1,0 +1,16 @@
+{
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "streetsidesoftware.code-spell-checker"
+            ]
+        }
+    },
+    "dockerComposeFile": "../docker-compose.yaml",
+    "forwardPorts": [
+        3000
+    ],
+    "name": "Server",
+    "service": "server",
+    "workspaceFolder": "/app"
+}
