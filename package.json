@@ -25,7 +25,9 @@
         "@nestjs/platform-express": "^10.0.0",
         "pre-commit": "^1.2.2",
         "reflect-metadata": "^0.2.0",
-        "rxjs": "^7.8.1"
+        "rxjs": "^7.8.1",
+        "prettier": "3.3.3",
+        "prettier-plugin-organize-imports": "^4.0.0"
     },
     "devDependencies": {
         "@nestjs/cli": "^10.0.0",
