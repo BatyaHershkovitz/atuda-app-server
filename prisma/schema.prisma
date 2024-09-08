@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model RequestType {
+  id              Int       @id @default(autoincrement())
+  name            String
+  description     String?
+  duration        Int
+  stagesFlow      Json
+  declarationText String
+  requests        Request[]
+}
+
+model Stage {
+  key         String  @id @unique
+  header      String
+  title       String?
+  description String?
+  schema      Json?
+  options     Json?
+}
+
+model selectItem {
+  listName String
+  name     String
+
+  @@id([name, listName])
+}
+
+model Request {
+  id               Int              @id @default(autoincrement())
+  requestType      RequestType      @relation(fields: [requestTypeId], references: [id])
+  requestTypeId    Int
+  userIdentity     String
+  createdOn        DateTime
+  status           String
+  lastChangeStatus DateTime
+  requestDetails   RequestDetails[]
+}
+
+model RequestDetails {
+  id        Int     @id @default(autoincrement())
+  request   Request @relation(fields: [requestId], references: [id])
+  requestId Int
+  fieldName String
+  fieldType String
+  data      String?
+}
